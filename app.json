@@ -1,0 +1,17 @@
+{
+  "name": "covid-19-mobile",
+  "displayName": "covid-19-mobile",
+  "expo": {
+    "name": "covid-19-mobile",
+    "slug": "covid-19-mobile",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
