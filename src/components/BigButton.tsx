@@ -10,7 +10,7 @@ type BigButtonProps = {
   containerStyle?: ViewStyle;
 }
 
-export default ({ onPress, title, containerStyle } : BigButtonProps) => (
+const BigButton =  ({ onPress, title, containerStyle } : BigButtonProps) => (
   <TouchableOpacity onPress={onPress} style={[styles.container, containerStyle]} >
     <Text style={styles.text}>{title}</Text>
   </TouchableOpacity>
@@ -30,3 +30,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
   }
 });
+
+export default BigButton;

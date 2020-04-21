@@ -8,7 +8,7 @@ type CardProps = {
   children: React.ReactNode;
 }
 
-export default ({ children} : CardProps) => (
+const Card = ({ children} : CardProps) => (
   <View style={styles.container}>
     {children}
   </View>
@@ -32,3 +32,5 @@ const styles = StyleSheet.create({
     elevation: 2,
   }
 });
+
+export default Card;

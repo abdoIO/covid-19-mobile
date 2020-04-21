@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
-import BigButton from '../components/BigButton';
-import Card from '../components/Card';
+import BigButton from '../../components/BigButton';
+import HeaderSection from './sections/header';
+import SafetyScoreSection from './sections/safety-score';
 
 const HomeScreen = ({ navigation }) => {
   const navigateToBotScreen = () => navigation.navigate('Bot');
@@ -9,16 +10,9 @@ const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
+        <HeaderSection />
         <ScrollView>
-          <View style={styles.header}>
-            <View>
-              <Text style={{ fontSize: 35, fontWeight: 'bold' }}>Dashboard</Text>
-            </View>
-            <View />
-          </View>
-          <Card>
-            <Text style={{ fontSize: 15 }}>Safety Score</Text>
-          </Card>
+          <SafetyScoreSection />
         </ScrollView>
         <View style={styles.fixedButtonContainer}>
           <BigButton
@@ -40,13 +34,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
-  },
-  header: {
-    marginVertical: 30,
-    marginHorizontal: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignSelf: 'stretch',
   },
   fixedButtonContainer: {
     position: 'absolute',
