@@ -16,6 +16,8 @@ const News = () => {
 
   return (
     <View style={styles.section}>
+      {error && <Text>Error!</Text>}
+      {loading && <Text>Loading...</Text>}
       {!loading &&
         data.articles.map((article) => {
           return (
