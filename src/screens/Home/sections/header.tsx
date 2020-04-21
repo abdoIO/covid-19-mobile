@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 const Header = () => {
   return (
-    <View style={styles.header}>
-      <View>
-        <Text style={{ fontSize: 35, fontWeight: 'bold' }}>Dashboard</Text>
+    <View>
+      <View style={styles.header}>
+        <Text style={{ fontSize: 35, fontWeight: 'bold', alignSelf: 'center' }}>Dashboard</Text>
+        <Image style={styles.logo} source={require('../../../assets/c19sm.png')}></Image>
       </View>
       <View />
     </View>
@@ -15,12 +16,20 @@ const Header = () => {
 
 const styles = StyleSheet.create({
   header: {
-    marginVertical: 30,
-    marginHorizontal: 20,
-    flexDirection: 'row',
+    display: 'flex',
     justifyContent: 'space-between',
-    alignSelf: 'stretch',
+    alignContent: 'center',
+    marginVertical: 30,
+    marginHorizontal: 60,
+    flexDirection: 'row',
+    width: '80vw',
   },
+
+  logo: {
+    width: 70,
+    height: 70,
+    alignSelf: 'flex-end',
+  }
 });
 
 export default Header;

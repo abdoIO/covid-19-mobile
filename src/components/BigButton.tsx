@@ -1,5 +1,11 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, Dimensions, ViewStyle } from 'react-native';
+import {
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  Dimensions,
+  ViewStyle,
+} from 'react-native';
 import { colors } from '../theme';
 
 const { width } = Dimensions.get('window');
@@ -8,13 +14,15 @@ type BigButtonProps = {
   onPress: () => void;
   title: string;
   containerStyle?: ViewStyle;
-}
+};
 
-const BigButton =  ({ onPress, title, containerStyle } : BigButtonProps) => (
-  <TouchableOpacity onPress={onPress} style={[styles.container, containerStyle]} >
+const BigButton = ({ onPress, title, containerStyle }: BigButtonProps) => (
+  <TouchableOpacity
+    onPress={onPress}
+    style={[styles.container, containerStyle]}>
     <Text style={styles.text}>{title}</Text>
   </TouchableOpacity>
-)
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -28,7 +36,7 @@ const styles = StyleSheet.create({
   text: {
     color: colors.white,
     fontSize: 20,
-  }
+  },
 });
 
 export default BigButton;
