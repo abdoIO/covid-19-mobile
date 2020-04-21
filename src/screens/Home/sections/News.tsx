@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import useFetch from 'use-http';
 
 import Card from '../../../components/Card';
+import Swiper from '../../../components/Swiper';
 
 const News = () => {
   const options = {
@@ -18,14 +19,7 @@ const News = () => {
     <View style={styles.section}>
       {error && <Text>Error!</Text>}
       {loading && <Text>Loading...</Text>}
-      {!loading &&
-        data.articles.map((article) => {
-          return (
-            <Card>
-              <Text>{article.title}</Text>
-            </Card>
-          );
-        })}
+      {data && <Swiper data={data.articles} renderItem={(article) => <Text>{article.title}</Text>} />}
     </View>
   );
 };

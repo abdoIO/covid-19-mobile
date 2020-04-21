@@ -18,7 +18,6 @@ const HomeScreen = ({ navigation }) => {
         <HeaderSection />
         <ScrollView>
           <SafetyScoreSection />
-          <Swiper data={[1,2,3,4,5]} renderItem={(item) => (<Text>{item}</Text>)} />
           <News />
           <Charts />
           <Totals />
