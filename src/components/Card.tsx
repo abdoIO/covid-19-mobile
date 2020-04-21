@@ -6,7 +6,7 @@ const { width } = Dimensions.get('window');
 
 type CardProps = {
   children: React.ReactNode;
-  style: ViewStyle;
+  style?: ViewStyle;
 }
 
 const Card = ({ children, style} : CardProps) => (
