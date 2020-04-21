@@ -1,17 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
-import {
-  BrowserView,
-  MobileView,
-  isBrowser,
-  isMobile,
-} from 'react-device-detect';
 
 import BigButton from '../../components/BigButton';
 import Charts from './sections/Charts';
 import HeaderSection from './sections/Header';
-import NewsDesktop from './sections/NewsDesktop';
-import NewsMobile from './sections/NewsMobile';
+import News from './sections/News';
 import SafetyScoreSection from './sections/SafetyScore';
 import Swiper from '../../components/Swiper';
 import Totals from './sections/Totals';
@@ -25,7 +18,7 @@ const HomeScreen = ({ navigation }) => {
         <HeaderSection />
         <ScrollView>
           <SafetyScoreSection />
-          {isMobile ? <NewsMobile /> : <NewsDesktop />}
+          <News />
           <Charts />
           <Totals />
         </ScrollView>

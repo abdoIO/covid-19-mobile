@@ -1,7 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { Platform, StyleSheet, Text, View, Image } from 'react-native';
 import useFetch from 'use-http';
 import moment from 'moment';
+
+import Card from '../../../components/Card';
 import Swiper from '../../../components/Swiper';
 import { colors } from '../../../theme';
 
@@ -19,16 +21,39 @@ const News = () => {
     <>
       <Image source={{ uri: article.urlToImage }} style={styles.cardImage} />
       <Text style={styles.cardText}>{article.title}</Text>
-      <Text style={styles.cardDate}>{moment(article.publishedAt).format('DD-MM-YYYY')}</Text>
+      <Text style={styles.cardDate}>
+        {moment(article.publishedAt).format('DD-MM-YYYY')}
+      </Text>
     </>
-  )
+  );
 
+  const renderMobile = () => {
+    data && <Swiper data={data.articles} renderItem={renderNewsCard} />;
+  };
+
+  const renderDesktop = () => {
+    data &&
+      data.articles.map((article) => {
+        return (
+          <Card style={{ width: 200 }}>
+            <Image
+              source={{ uri: article.urlToImage }}
+              style={styles.cardImage}
+            />
+            <Text>{article.title}</Text>
+            <Text style={styles.cardDate}>
+              {moment(article.publishedAt).format('DD-MM-YYYY')}
+            </Text>
+          </Card>
+        );
+      });
+  };
 
   return (
     <View style={styles.section}>
       {error && <Text>Error!</Text>}
       {loading && <Text>Loading...</Text>}
-      {data && <Swiper data={data.articles} renderItem={renderNewsCard} />}
+      {Platform.OS === 'web' ? renderDesktop() : renderMobile()}
     </View>
   );
 };
@@ -42,7 +67,9 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   cardImage: {
-    height: 140, borderRadius: 5, marginBottom: 10
+    height: 140,
+    borderRadius: 5,
+    marginBottom: 10,
   },
   cardText: {
     direction: 'rtl',
@@ -51,7 +78,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: colors.grey,
     marginTop: 20,
-  }
+  },
 });
 
 export default News;
