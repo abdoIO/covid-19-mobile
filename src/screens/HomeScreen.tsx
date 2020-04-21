@@ -40,10 +40,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
-    paddingHorizontal: 20,
   },
   header: {
     marginVertical: 30,
+    marginHorizontal: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignSelf: 'stretch',
