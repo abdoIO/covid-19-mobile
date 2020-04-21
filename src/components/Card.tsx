@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     backgroundColor: colors.white,
     paddingHorizontal: 20,
-    marginHorizontal: 20,
+    marginLeft: 20, //should be margin right when we switch to Arabic
     marginBottom: 20,
     width: width - 40,
     shadowColor: colors.grey,
