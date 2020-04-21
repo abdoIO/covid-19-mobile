@@ -32,7 +32,7 @@ const BotScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <ChatBot steps={steps} botAvatar={botAvatar} />
+        {/* <ChatBot steps={steps} botAvatar={botAvatar} /> */}
       </View>
     </SafeAreaView>
   );
