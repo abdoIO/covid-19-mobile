@@ -23,9 +23,10 @@ const steps = [
     message: 'ha2aw aw aw aw aw',
     end: true,
   },
-]
+];
 
-const botAvatar = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQFeeJsnL6NEtJ8fIfF0Bnb_Lsdg4f3p7H2jeo2t0LQ4vCu4YtE&usqp=CAU';
+const botAvatar =
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQFeeJsnL6NEtJ8fIfF0Bnb_Lsdg4f3p7H2jeo2t0LQ4vCu4YtE&usqp=CAU';
 
 const BotScreen = () => {
   return (
@@ -35,7 +36,7 @@ const BotScreen = () => {
       </View>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   safeArea: {
