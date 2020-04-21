@@ -7609,6 +7609,24 @@ url-parse@^1.4.4:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
 
+urs@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/urs/-/urs-0.0.4.tgz#d559d660f2a468e0bb116e0b7b505af57cb59ae4"
+  integrity sha512-+QflFOKa9DmjWclPB2audGCV83uWUnTXHOxLPQyu7XXcaY9yQ4+Tb3UEm8m4N7abJ0kJUCUAQBpFlq6mx80j9g==
+
+use-http@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/use-http/-/use-http-1.0.7.tgz#9f2d1c15ace5c0e0d1cb62e0760205b4384d35e7"
+  integrity sha512-DaSXid8DHCYCVGsvOV44pW9MYeBLlpYOp8Xi/cbwvazqmIjA7zn5nQjOcqEXFeKCboYloA6oKw2ee8KnxoyH/Q==
+  dependencies:
+    urs "^0.0.4"
+    use-ssr "^1.0.22"
+
+use-ssr@^1.0.22:
+  version "1.0.23"
+  resolved "https://registry.yarnpkg.com/use-ssr/-/use-ssr-1.0.23.tgz#3bde1e10cd01b3b61ab6386d7cddb72e74828bf8"
+  integrity sha512-5bvlssgROgPgIrnILJe2mJch4e2Id0/bVm1SQzqvPvEAXmlsinCCVHWK3a2iHcPat7PkdJHBo0gmSmODIz6tNA==
+
 use-subscription@^1.4.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/use-subscription/-/use-subscription-1.4.1.tgz#edcbcc220f1adb2dd4fa0b2f61b6cc308e620069"
