@@ -3,12 +3,9 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 const Header = () => {
   return (
-    <View>
-      <View style={styles.header}>
-        <Text style={{ fontSize: 35, fontWeight: 'bold', alignSelf: 'center' }}>Dashboard</Text>
-        <Image style={styles.logo} source={require('../../../assets/c19sm.png')}></Image>
-      </View>
-      <View />
+    <View style={styles.header}>
+      <Text style={{ fontSize: 35, fontWeight: 'bold', alignSelf: 'center' }}>Dashboard</Text>
+      <Image style={styles.logo} source={require('../../../assets/c19sm.png')}></Image>
     </View>
 
   );
@@ -17,12 +14,12 @@ const Header = () => {
 const styles = StyleSheet.create({
   header: {
     display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'space-between',
     alignContent: 'center',
+    alignSelf: 'stretch',
     marginVertical: 30,
-    marginHorizontal: 60,
-    flexDirection: 'row',
-    width: '80vw',
+    marginHorizontal: 20,
   },
 
   logo: {
