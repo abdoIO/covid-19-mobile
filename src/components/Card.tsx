@@ -1,15 +1,16 @@
 import React from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
+import { View, StyleSheet, Dimensions, ViewStyle } from 'react-native';
 import { colors } from '../theme';
 
 const { width } = Dimensions.get('window');
 
 type CardProps = {
   children: React.ReactNode;
+  style: ViewStyle;
 }
 
-const Card = ({ children} : CardProps) => (
-  <View style={styles.container}>
+const Card = ({ children, style} : CardProps) => (
+  <View style={[styles.container, style]}>
     {children}
   </View>
 )
