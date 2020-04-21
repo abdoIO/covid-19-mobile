@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import useFetch from 'use-http';
-
-import Card from '../../../components/Card';
+import moment from 'moment';
 import Swiper from '../../../components/Swiper';
+import { colors } from '../../../theme';
 
 const News = () => {
   const options = {
@@ -15,11 +15,20 @@ const News = () => {
     []
   );
 
+  const renderNewsCard = (article) => (
+    <>
+      <Image source={{ uri: article.urlToImage }} style={styles.cardImage} />
+      <Text style={styles.cardText}>{article.title}</Text>
+      <Text style={styles.cardDate}>{moment(article.publishedAt).format('DD-MM-YYYY')}</Text>
+    </>
+  )
+
+
   return (
     <View style={styles.section}>
       {error && <Text>Error!</Text>}
       {loading && <Text>Loading...</Text>}
-      {data && <Swiper data={data.articles} renderItem={(article) => <Text>{article.title}</Text>} />}
+      {data && <Swiper data={data.articles} renderItem={renderNewsCard} />}
     </View>
   );
 };
@@ -32,6 +41,17 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 15,
   },
+  cardImage: {
+    height: 140, borderRadius: 5, marginBottom: 10
+  },
+  cardText: {
+    direction: 'rtl',
+  },
+  cardDate: {
+    fontSize: 12,
+    color: colors.grey,
+    marginTop: 20,
+  }
 });
 
 export default News;
