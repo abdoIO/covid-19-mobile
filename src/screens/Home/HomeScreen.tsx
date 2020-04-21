@@ -7,6 +7,7 @@ import HeaderSection from './sections/Header';
 import News from './sections/News';
 import SafetyScoreSection from './sections/SafetyScore';
 import Totals from './sections/Totals';
+import Swiper from '../../components/Swiper';
 
 const HomeScreen = ({ navigation }) => {
   const navigateToBotScreen = () => navigation.navigate('Bot');
@@ -17,6 +18,7 @@ const HomeScreen = ({ navigation }) => {
         <HeaderSection />
         <ScrollView>
           <SafetyScoreSection />
+          <Swiper data={[1,2,3,4,5]} renderItem={(item) => (<Text>{item}</Text>)} />
           <News />
           <Charts />
           <Totals />
