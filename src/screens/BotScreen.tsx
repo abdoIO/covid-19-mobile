@@ -1,12 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import BigButton from '../components/BigButton';
+import { StyleSheet, Text, View } from 'react-native';
 
-const BotScreen = ({ navigation }) => {
+const BotScreen = () => {
   return (
     <View style={styles.container}>
       <Text>Bot Screen</Text>
-      <BigButton title="Go Bot Screen" onPress={navigation.navigate('Bot')} />
     </View>
   );
 }

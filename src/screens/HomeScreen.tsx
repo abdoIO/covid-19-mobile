@@ -1,13 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import BigButton from '../components/BigButton';
 
 const HomeScreen = ({ navigation }) => {
+  const navigateToBotScreen = () => navigation.navigate('Bot');
+
   return (
     <View style={styles.container}>
-      <Text>Home Screen 123</Text>
-      <Button
-        title="Go to Bot"
-        onPress={() => navigation.navigate('Bot')}
+      <Text>Home Screen</Text>
+      <BigButton
+        title="Start Self Diagnosis"
+        onPress={navigateToBotScreen}
       />
     </View>
   );
