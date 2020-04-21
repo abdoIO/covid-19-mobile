@@ -1,13 +1,12 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { View } from 'react-native'
+import { View, TouchableOpacity } from 'react-native'
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Feather } from '@expo/vector-icons';
 import { colors } from './src/theme';
 import HomeScreen from './src/screens/Home/HomeScreen';
 import BotScreen from './src/screens/Bot/BotScreen';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Stack = createStackNavigator();
 
