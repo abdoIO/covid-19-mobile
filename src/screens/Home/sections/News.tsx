@@ -1,23 +1,38 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import useFetch from 'use-http';
 
 import Card from '../../../components/Card';
 
 const News = () => {
+  const options = {
+    data: [], // default for `data` will be an array instead of undefined
+  };
+
   const { loading, error, data } = useFetch(
-    'http://newsapi.org/v2/everything?apiKey=68ddf899b505404e960daf512baabe76&q=كورونا مصر',
+    'https://newsapi.org/v2/everything?apiKey=68ddf899b505404e960daf512baabe76&q=كورونا مصر',
     []
-  ); // onMount (GET by default)
+  );
 
   return (
-    <Card>
-      <Text style={styles.title}>News</Text>
-    </Card>
+    <View style={styles.section}>
+      {!loading &&
+        data.articles.map((article) => {
+          return (
+            <Card>
+              <Text>{article.title}</Text>
+            </Card>
+          );
+        })}
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  section: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
   title: {
     fontSize: 15,
   },
