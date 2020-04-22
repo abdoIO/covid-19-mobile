@@ -28,33 +28,43 @@ const News = () => {
   );
 
   const renderMobile = () => {
-    data && <Swiper data={data.articles} renderItem={renderNewsCard} />;
+    return (
+      data && (
+        <View style={styles.section}>
+          <Swiper data={data.articles} renderItem={renderNewsCard} />
+        </View>
+      )
+    );
   };
 
   const renderDesktop = () => {
-    data &&
-      data.articles.map((article) => {
-        return (
-          <Card style={{ width: 200 }}>
-            <Image
-              source={{ uri: article.urlToImage }}
-              style={styles.cardImage}
-            />
-            <Text>{article.title}</Text>
-            <Text style={styles.cardDate}>
-              {moment(article.publishedAt).format('DD-MM-YYYY')}
-            </Text>
-          </Card>
-        );
-      });
+    return (
+      <View style={styles.newsDesktop}>
+        {data &&
+          data.articles.map((article) => {
+            return (
+              <Card style={{ width: 200 }}>
+                <Image
+                  source={{ uri: article.urlToImage }}
+                  style={styles.cardImage}
+                />
+                <Text>{article.title}</Text>
+                <Text style={styles.cardDate}>
+                  {moment(article.publishedAt).format('DD-MM-YYYY')}
+                </Text>
+              </Card>
+            );
+          })}
+      </View>
+    );
   };
 
   return (
-    <View style={styles.section}>
+    <>
       {error && <Text>Error!</Text>}
       {loading && <Text>Loading...</Text>}
       {Platform.OS === 'web' ? renderDesktop() : renderMobile()}
-    </View>
+    </>
   );
 };
 
@@ -62,6 +72,7 @@ const styles = StyleSheet.create({
   section: {
     display: 'flex',
     flexDirection: 'row',
+    margin: 'auto',
   },
   title: {
     fontSize: 15,
@@ -78,6 +89,11 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: colors.grey,
     marginTop: 20,
+  },
+  newsDesktop: {
+    display: 'flex',
+    flexDirection: 'row',
+    maxWidth: '100vw',
   },
 });
 

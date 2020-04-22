@@ -5,24 +5,26 @@ import Card from './Card';
 const { width } = Dimensions.get('window');
 
 type SwiperProps = {
-  data: any[], 
+  data: any[];
   renderItem: (item: any) => React.ReactNode;
-}
+};
 
-const Swiper = ({ data, renderItem } : SwiperProps) => {
+const Swiper = ({ data, renderItem }: SwiperProps) => {
   const _renderItem: ListRenderItem<any> = ({ item }) => (
-    <Card style={{ width: width / 1.5, paddingHorizontal:10 }}>
+    <Card style={{ width: width / 1.5, paddingHorizontal: 10 }}>
       {renderItem(item)}
     </Card>
-  )
+  );
 
-  return <FlatList 
-    data={data}
-    renderItem={_renderItem}
-    showsHorizontalScrollIndicator={false}
-    horizontal
-    snapToInterval={width / 1.5 + 20}
-  />
-}
+  return (
+    <FlatList
+      data={data}
+      renderItem={_renderItem}
+      showsHorizontalScrollIndicator={false}
+      horizontal
+      snapToInterval={width / 1.5 + 20}
+    />
+  );
+};
 
 export default Swiper;
