@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import InfoWithAction from '../../components/InfoWithAction';
 
-const HowTo = () => (
-  <InfoWithAction buttonLabel="Next" buttonOnPress={() => null}>
+const HowTo = ({ navigation }) => (
+  <InfoWithAction buttonLabel="Next" buttonOnPress={() => navigation.navigate('DataPrivacy')}>
     <View style={styles.container}>
       <Image
         style={styles.logo}

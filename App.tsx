@@ -8,6 +8,8 @@ import { colors } from './src/theme';
 import HomeScreen from './src/screens/Home/HomeScreen';
 import BotScreen from './src/screens/Bot/BotScreen';
 import HowTo from './src/screens/Intro/HowTo';
+import AskForLocation from './src/screens/Intro/AskForLocation';
+import DataPrivacy from './src/screens/Intro/DataPrivacy';
 
 const Stack = createStackNavigator();
 
@@ -34,6 +36,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="HowTo" component={HowTo} options={HomeScreenOptions} />
+        <Stack.Screen name="DataPrivacy" component={DataPrivacy} options={HomeScreenOptions} />
+        <Stack.Screen name="AskForLocation" component={AskForLocation} options={HomeScreenOptions} />
         <Stack.Screen name="Home" component={HomeScreen} options={HomeScreenOptions} />
         <Stack.Screen name="Bot" component={BotScreen} options={BotScreenOptions} />
       </Stack.Navigator>
