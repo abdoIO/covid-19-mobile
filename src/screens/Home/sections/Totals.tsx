@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     fontSize: 15,
-    minHeight: 250,
+    minHeight: '10rem',
   },
   score: {
     fontSize: 20,

@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { View, TouchableOpacity } from 'react-native'
+import { View, TouchableOpacity } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Feather } from '@expo/vector-icons';
@@ -20,16 +20,18 @@ const HomeScreenOptions = {
 const BotScreenOptions = {
   title: '',
   headerLeft: () => <BackButton />,
-}
+};
 
 const BackButton = () => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={navigation.goBack} style={{ paddingHorizontal: 10 }}>
+    <TouchableOpacity
+      onPress={navigation.goBack}
+      style={{ paddingHorizontal: 10 }}>
       <Feather name="arrow-left" size={34} color={colors.blue400} />
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 export default function App() {
   return (
