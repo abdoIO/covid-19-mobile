@@ -7,6 +7,7 @@ import { Feather } from '@expo/vector-icons';
 import { colors } from './src/theme';
 import HomeScreen from './src/screens/Home/HomeScreen';
 import BotScreen from './src/screens/Bot/BotScreen';
+import HowTo from './src/screens/Intro/HowTo';
 
 const Stack = createStackNavigator();
 
@@ -32,6 +33,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="HowTo" component={HowTo} options={HomeScreenOptions} />
         <Stack.Screen name="Home" component={HomeScreen} options={HomeScreenOptions} />
         <Stack.Screen name="Bot" component={BotScreen} options={BotScreenOptions} />
       </Stack.Navigator>
