@@ -47,7 +47,7 @@ const BotScreen = () => {
             steps={steps}
             botAvatar={botAvatar}
             keyboardVerticalOffset={90}
-            submitButtonStyle={{ backgroundColor: colors.blue400 }}
+            submitButtonStyle={{ backgroundColor: colors.blue400, borderRadius: 30, marginVertical: 5, marginHorizontal: -5 }}
             botBubbleColor={colors.blue400}
             style={{ borderbottomColor: 'white' }}
             optionBubbleColor={colors.blue400}
