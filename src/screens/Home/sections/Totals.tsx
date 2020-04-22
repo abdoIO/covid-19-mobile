@@ -7,7 +7,7 @@ import Card from '../../../components/Card';
 const DisplayCount = ({ title, number, color }) => (
   <View style={styles.displayContainer}>
     <Text style={[styles.score, { color }]}>{number}</Text>
-    <Text style={styles.label}>{title}</Text>
+    <Text>{title}</Text>
   </View>
 )
 
