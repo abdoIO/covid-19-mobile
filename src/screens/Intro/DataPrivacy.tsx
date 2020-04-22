@@ -9,6 +9,6 @@ const DataPrivacy = () => {
   );
 };
 
-export default DataPrivacy;
-
 const styles = StyleSheet.create({});
+
+export default DataPrivacy;

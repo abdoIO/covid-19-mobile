@@ -9,6 +9,6 @@ const AskForLocation = () => {
   );
 };
 
-export default AskForLocation;
-
 const styles = StyleSheet.create({});
+
+export default AskForLocation;

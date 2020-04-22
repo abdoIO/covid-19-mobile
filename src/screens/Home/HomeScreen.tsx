@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   fixedButtonContainer: {
     paddingTop: 20,
     position: 'absolute',
-    bottom:10,
+    bottom: 10,
   },
 });
 
