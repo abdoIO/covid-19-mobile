@@ -41,10 +41,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
+    paddingBottom: 90,
   },
   fixedButtonContainer: {
+    paddingTop: 20,
     position: 'absolute',
-    bottom: 40,
+    bottom:10,
   },
 });
 
