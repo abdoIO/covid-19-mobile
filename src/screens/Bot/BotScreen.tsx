@@ -1,6 +1,7 @@
 import React from 'react';
 import ChatBot from 'react-native-chatbot';
 import { StyleSheet, SafeAreaView, View, Platform } from 'react-native';
+import { colors } from '../../theme';
 
 const steps = [
   {
@@ -15,12 +16,21 @@ const steps = [
   },
   {
     id: '3',
-    message: 'Zeby 3alek ya {previousValue}',
+    message: '3amel eh ya {previousValue}',
     trigger: '4',
   },
   {
     id: '4',
-    message: 'ha2aw aw aw aw aw',
+    options: [
+      { value: 1, label: 'ta3ban', trigger: '5' },
+      { value: 2, label: 'ta3ban nek', trigger: '5' },
+      { value: 3, label: 'ana saleem', trigger: '5' },
+    ],
+    trigger: '5',
+  },
+  {
+    id: '5',
+    message: 'roo7 etnak',
     end: true,
   },
 ];
@@ -32,7 +42,16 @@ const BotScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        {Platform.OS !== 'web' && <ChatBot steps={steps} botAvatar={botAvatar} />}
+        {Platform.OS !== 'web' &&
+          <ChatBot
+            steps={steps}
+            botAvatar={botAvatar}
+            keyboardVerticalOffset={90}
+            submitButtonStyle={{ backgroundColor: colors.blue400 }}
+            botBubbleColor={colors.blue400}
+            style={{ borderbottomColor: 'white' }}
+            optionBubbleColor={colors.blue400}
+          />}
       </View>
     </SafeAreaView>
   );
