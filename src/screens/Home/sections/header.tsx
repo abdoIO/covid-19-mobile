@@ -4,12 +4,12 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 const Header = () => {
   return (
     <View style={styles.header}>
-      <Text style={{ fontSize: 35, fontWeight: 'bold', alignSelf: 'center' }}>
-        Dashboard
-      </Text>
       <Image
         style={styles.logo}
         source={require('../../../assets/c19sm.png')}></Image>
+      <Text style={{ fontSize: 35, fontWeight: 'bold', alignSelf: 'center' }}>
+        الرئيسية
+      </Text>
     </View>
   );
 };

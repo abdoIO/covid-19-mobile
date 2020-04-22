@@ -11,7 +11,7 @@ type SwiperProps = {
 
 const Swiper = ({ data, renderItem }: SwiperProps) => {
   const _renderItem: ListRenderItem<any> = ({ item }) => (
-    <Card style={{ width: width / 1.5, paddingHorizontal: 10 }}>
+    <Card style={{ width: width / 1.5, minHeight: 280, paddingHorizontal: 10 }}>
       {renderItem(item)}
     </Card>
   );

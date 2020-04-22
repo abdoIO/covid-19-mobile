@@ -24,7 +24,7 @@ const HomeScreen = ({ navigation }) => {
         </ScrollView>
         <View style={styles.fixedButtonContainer}>
           <BigButton
-            title="Start Self Diagnosis"
+            title="إبدأ التشخيص الذاتي"
             onPress={navigateToBotScreen}
           />
         </View>
