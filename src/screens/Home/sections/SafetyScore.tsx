@@ -38,11 +38,17 @@ const styles = StyleSheet.create({
   recommendation: {
     fontSize: 18,
   },
-  info: {},
+  info: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
+    justifyContent: 'space-between',
+  },
   infoScore: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    justifyContent: 'space-between',
   },
 });
 

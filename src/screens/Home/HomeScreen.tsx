@@ -6,7 +6,6 @@ import Charts from './sections/Charts';
 import HeaderSection from './sections/Header';
 import News from './sections/News';
 import SafetyScoreSection from './sections/SafetyScore';
-import Swiper from '../../components/Swiper';
 import Totals from './sections/Totals';
 
 const HomeScreen = ({ navigation }) => {
@@ -18,9 +17,9 @@ const HomeScreen = ({ navigation }) => {
         <HeaderSection />
         <ScrollView>
           <SafetyScoreSection />
-          <News />
           <Charts />
           <Totals />
+          <News />
         </ScrollView>
         <View style={styles.fixedButtonContainer}>
           <BigButton
@@ -47,7 +46,7 @@ const styles = StyleSheet.create({
   fixedButtonContainer: {
     paddingTop: 20,
     position: 'absolute',
-    bottom:10,
+    bottom: 10,
   },
 });
 

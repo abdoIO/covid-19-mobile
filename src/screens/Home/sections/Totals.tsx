@@ -9,7 +9,7 @@ const DisplayCount = ({ title, number, color }) => (
     <Text style={[styles.score, { color }]}>{number}</Text>
     <Text>{title}</Text>
   </View>
-)
+);
 
 const Totals = () => {
   const { loading, error, data } = useFetch(
@@ -21,29 +21,61 @@ const Totals = () => {
     <>
       <Card>
         <View style={styles.container}>
-          <DisplayCount title="الحالات النشطة" number={data.slice(-1)[0].Active} color={colors.blue} />
-          <DisplayCount title="الحالات المؤكدة" number={data.slice(-1)[0].Confirmed} color={colors.grey} />
+          <DisplayCount
+            title="الحالات النشطة"
+            number={data.slice(-1)[0].Active}
+            color={colors.blue}
+          />
+          <DisplayCount
+            title="الحالات المؤكدة"
+            number={data.slice(-1)[0].Confirmed}
+            color={colors.grey}
+          />
         </View>
       </Card>
       <Card>
         <View style={styles.container}>
-          <DisplayCount title="حالات الوفاة" number={data.slice(-1)[0].Deaths} color={colors.red} />
-          <DisplayCount title="حالات تعافت" number={data.slice(-1)[0].Recovered} color={colors.green} />
+          <DisplayCount
+            title="حالات الوفاة"
+            number={data.slice(-1)[0].Deaths}
+            color={colors.red}
+          />
+          <DisplayCount
+            title="حالات تعافت"
+            number={data.slice(-1)[0].Recovered}
+            color={colors.green}
+          />
         </View>
       </Card>
     </>
-  )
+  );
 
   const renderDesktop = () => (
     <Card>
       <View style={styles.container}>
-        <DisplayCount title="الحالات النشطة" number={data.slice(-1)[0].Active} color={colors.blue} />
-        <DisplayCount title="الحالات المؤكدة" number={data.slice(-1)[0].Confirmed} color={colors.grey} />
-        <DisplayCount title="حالات الوفاة" number={data.slice(-1)[0].Deaths} color={colors.red} />
-        <DisplayCount title="حالات تعافت" number={data.slice(-1)[0].Recovered} color={colors.green} />
+        <DisplayCount
+          title="الحالات النشطة"
+          number={data.slice(-1)[0].Active}
+          color={colors.blue}
+        />
+        <DisplayCount
+          title="الحالات المؤكدة"
+          number={data.slice(-1)[0].Confirmed}
+          color={colors.grey}
+        />
+        <DisplayCount
+          title="حالات الوفاة"
+          number={data.slice(-1)[0].Deaths}
+          color={colors.red}
+        />
+        <DisplayCount
+          title="حالات تعافت"
+          number={data.slice(-1)[0].Recovered}
+          color={colors.green}
+        />
       </View>
     </Card>
-  )
+  );
 
   return (
     <>
@@ -65,6 +97,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     fontSize: 15,
+    minHeight: 250,
   },
   score: {
     fontSize: 20,
