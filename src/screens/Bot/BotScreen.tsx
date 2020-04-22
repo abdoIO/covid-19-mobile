@@ -1,6 +1,6 @@
 import React from 'react';
 import ChatBot from 'react-native-chatbot';
-import { StyleSheet, SafeAreaView, View } from 'react-native';
+import { StyleSheet, SafeAreaView, View, Platform } from 'react-native';
 
 const steps = [
   {
@@ -32,7 +32,7 @@ const BotScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        {/* <ChatBot steps={steps} botAvatar={botAvatar} /> */}
+        {Platform.OS !== 'web' && <ChatBot steps={steps} botAvatar={botAvatar} />}
       </View>
     </SafeAreaView>
   );
