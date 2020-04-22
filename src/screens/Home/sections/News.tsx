@@ -43,7 +43,8 @@ const News = () => {
         {data &&
           data.articles.map((article) => {
             return (
-              <Card style={{ width: 200 }}>
+              <Card
+                style={{ width: 210, margin: 'auto', marginBottom: '1rem' }}>
                 <Image
                   source={{ uri: article.urlToImage }}
                   style={styles.cardImage}
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
   newsDesktop: {
     display: 'flex',
     flexDirection: 'row',
-    maxWidth: '100vw',
+    flexWrap: 'wrap',
   },
 });
 

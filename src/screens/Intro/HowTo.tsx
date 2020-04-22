@@ -1,11 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Image, Text, View, SafeAreaView } from 'react-native';
 
 const HowTo = () => {
   return (
-    <View>
-      <Text></Text>
-    </View>
+    <SafeAreaView style={styles.safeArea}>
+      <View>
+        <Image
+          style={styles.logo}
+          source={require('../../../assets/c19sm.png')}></Image>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+      </View>
+    </SafeAreaView>
   );
 };
 

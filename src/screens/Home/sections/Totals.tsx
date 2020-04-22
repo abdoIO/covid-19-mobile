@@ -16,22 +16,22 @@ const Totals = () => {
       {loading && <Text>Loading...</Text>}
       {data && (
         <View style={styles.container}>
-          <Text style={styles.title}>
+          <View style={styles.title}>
             <Text style={styles.score}>{data.slice(-1)[0].Active}</Text>
             <Text style={styles.label}>الحالات النشطة</Text>
-          </Text>
-          <Text style={styles.title}>
+          </View>
+          <View style={styles.title}>
             <Text style={styles.score}>{data.slice(-1)[0].Confirmed}</Text>
             <Text style={styles.label}>الحالات المؤكدة</Text>
-          </Text>
-          <Text style={styles.title}>
+          </View>
+          <View style={styles.title}>
             <Text style={styles.score}>{data.slice(-1)[0].Deaths}</Text>
             <Text style={styles.label}>حالات الوفاة</Text>
-          </Text>
-          <Text style={styles.title}>
+          </View>
+          <View style={styles.title}>
             <Text style={styles.score}>{data.slice(-1)[0].Recovered}</Text>
             <Text style={styles.label}>حالات تعافت</Text>
-          </Text>
+          </View>
         </View>
       )}
     </Card>
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     fontSize: 15,
+    minHeight: 250,
   },
   score: {
     color: 'red',
