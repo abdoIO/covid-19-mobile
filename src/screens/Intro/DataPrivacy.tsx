@@ -3,14 +3,21 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import InfoWithAction from '../../components/InfoWithAction';
 
 const DataPrivacy = ({ navigation }) => (
-  <InfoWithAction buttonLabel="Next" buttonOnPress={() => navigation.navigate('AskForLocation')}>
+  <InfoWithAction
+    buttonLabel="أوافق"
+    buttonOnPress={() => navigation.navigate('AskForLocation')}>
     <View style={styles.container}>
       <Image
         style={styles.logo}
         source={require('../../assets/c19sm.png')}></Image>
       <Text style={styles.text}>
-          data privacy
-        </Text>
+        هذا التطبيق يساعدك على عملية التشخيص الذاتي لفيروس كورونا. يمكنك هذا
+        التطبيق ايضا بالابلاغ الذاتي للسلطات المعنية في بلدك بحالتك لمساعدتك
+      </Text>
+      <Text style={styles.text}>
+        نحن ملزمون بحفظ بياناتك الخاصة. نحن نستخدم البيانات فقط بغرض مساعدتك في
+        إعداد التقارير الذاتية والتشخيص الذاتي.
+      </Text>
     </View>
   </InfoWithAction>
 );
@@ -24,7 +31,7 @@ const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
     paddingTop: 20,
-    fontSize: 22,
+    fontSize: 18,
     lineHeight: 40,
   },
   logo: {

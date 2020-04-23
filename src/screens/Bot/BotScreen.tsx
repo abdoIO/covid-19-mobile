@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { StyleSheet, SafeAreaView, View, Platform } from 'react-native';
-import { colors } from '../../theme';
 
 var ChatBot;
 
@@ -10,6 +8,8 @@ if (Platform.OS !== 'web') {
 } else {
   ChatBot = require('react-simple-chatbot').default;
 }
+
+import { colors } from '../../theme';
 
 const BotScreen = () => {
   const steps = [

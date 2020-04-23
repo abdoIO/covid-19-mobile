@@ -4,19 +4,24 @@ import { CommonActions } from '@react-navigation/native';
 import InfoWithAction from '../../components/InfoWithAction';
 
 const AskForLocation = ({ navigation }) => (
-  <InfoWithAction buttonLabel="Next" buttonOnPress={() => navigation.dispatch(CommonActions.reset({
-    index: 1,
-    routes: [
-      { name: 'Home' },
-    ],
-  }))}>
+  <InfoWithAction
+    buttonLabel="فعل خدمات تحديد الموقع"
+    buttonOnPress={() =>
+      navigation.dispatch(
+        CommonActions.reset({
+          index: 1,
+          routes: [{ name: 'Home' }],
+        })
+      )
+    }>
     <View style={styles.container}>
       <Image
         style={styles.logo}
         source={require('../../assets/c19sm.png')}></Image>
       <Text style={styles.text}>
-        ask for location
-        </Text>
+        نحن بحاجة إلى موقعك لتخصيص تجربة التطبيق. نحن لا نستخدم موقعك إلا إذا
+        أبلغت عن نفسك.
+      </Text>
     </View>
   </InfoWithAction>
 );
