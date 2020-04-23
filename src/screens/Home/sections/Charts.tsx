@@ -22,13 +22,18 @@ const Charts = () => {
           width={Dimensions.get('window').width - 80}
           height={220}
           chartConfig={{
-            backgroundGradientFrom: '#fb8c00',
-            backgroundGradientTo: '#ffa726',
-            decimalPlaces: 2,
-            color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+            backgroundGradientFrom: '#000',
+            backgroundGradientTo: '#fff',
+            decimalPlaces: 1, // optional, defaults to 2dp
+            color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+            labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
             style: {
-              backgroundColor: '#e26a00',
-              borderRadius: 16,
+              borderRadius: 1,
+            },
+            propsForDots: {
+              r: '3',
+              strokeWidth: '1',
+              stroke: '#ffa726',
             },
           }}
           style={{
