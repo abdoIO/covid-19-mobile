@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
-import { StyleSheet, SafeAreaView, View, Platform } from 'react-native';
+import React, { useState, useContext, useEffect } from 'react';
+import { StyleSheet, SafeAreaView, View, Platform, TouchableOpacity, Text } from 'react-native';
+import useFetch from 'use-http';
+
+import BotContext from '../../context/BotContext'
+
 import { colors } from '../../theme';
 import initalSteps from '../../data/bot-steps';
 
@@ -16,43 +20,56 @@ const botAvatar =
 
 const BotScreen = () => {
   const [steps, setSteps] = useState(initalSteps);
+  const [InitialRequestParams, setInitialRequestParams] = useState({});
+
+  // useEffect(() => {
+  //   const { loading, error, data } = useFetch(
+  //     '/covid19/questions',
+  //     []
+  //   );
+  // }, [])
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        {Platform.OS !== 'web' ? (
-          <ChatBot
-            steps={steps}
-            botAvatar={botAvatar}
-            keyboardVerticalOffset={90}
-            submitButtonStyle={{
-              backgroundColor: colors.blue400,
-              borderRadius: 30,
-              marginVertical: 5,
-              marginHorizontal: -5,
-            }}
-            botBubbleColor={colors.blue400}
-            style={{ borderbottomColor: 'white' }}
-            optionBubbleColor={colors.blue400}
-          />
-        ) : (
+      <BotContext.Provider value={{
+        InitialRequestParams,
+        setInitialRequestParams,
+      }}>
+        <View style={styles.container}>
+          {Platform.OS !== 'web' ? (
             <ChatBot
               steps={steps}
-              botBubbleColor={colors.blue400}
               botAvatar={botAvatar}
-              headerComponent
-              width="90vw"
+              keyboardVerticalOffset={90}
               submitButtonStyle={{
                 backgroundColor: colors.blue400,
                 borderRadius: 30,
                 marginVertical: 5,
                 marginHorizontal: -5,
               }}
+              botBubbleColor={colors.blue400}
               style={{ borderbottomColor: 'white' }}
-              inputStyle={{}}
-              bubbleStyle={{ backgroundColor: colors.blue400 }}></ChatBot>
-          )}
-      </View>
+              optionBubbleColor={colors.blue400}
+            />
+          ) : (
+              <ChatBot
+                steps={steps}
+                botBubbleColor={colors.blue400}
+                botAvatar={botAvatar}
+                headerComponent
+                width="90vw"
+                submitButtonStyle={{
+                  backgroundColor: colors.blue400,
+                  borderRadius: 30,
+                  marginVertical: 5,
+                  marginHorizontal: -5,
+                }}
+                style={{ borderbottomColor: 'white' }}
+                inputStyle={{}}
+                bubbleStyle={{ backgroundColor: colors.blue400 }}></ChatBot>
+            )}
+        </View>
+      </BotContext.Provider>
     </SafeAreaView>
   )
 }

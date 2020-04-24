@@ -1,3 +1,6 @@
+import React from 'react';
+import ChoicesComponent from '../screens/Bot/ChoicesComponent';
+
 export default [
     {
       id: '1',
@@ -35,6 +38,13 @@ export default [
     },
     {
       id: '7',
-      message: 'aa',
+      component: <ChoicesComponent  />,
+      waitAction: true,
+      trigger: '8',
+  },
+  {
+      id: '8',
+      user: true,
+      trigger: '1',
     },
   ];
