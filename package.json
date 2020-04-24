@@ -54,5 +54,6 @@
   "jest": {
     "preset": "react-native"
   },
-  "private": true
+  "private": true,
+  "proxy": "https://5ab4c365.ngrok.io"
 }
