@@ -3,15 +3,21 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import InfoWithAction from '../../components/InfoWithAction';
 
 const HowTo = ({ navigation }) => (
-  <InfoWithAction buttonLabel="Next" buttonOnPress={() => navigation.navigate('DataPrivacy')}>
+  <InfoWithAction
+    buttonLabel="التالي"
+    buttonOnPress={() => navigation.navigate('DataPrivacy')}>
     <View style={styles.container}>
       <Image
         style={styles.logo}
         source={require('../../assets/c19sm.png')}></Image>
       <Text style={styles.text}>
-        هذا التطبيق يساعدك على عملية التشخيص الذاتي لفيروس كورونا. يمكنك هذا
-        التطبيق ايضا بالابلاغ الذاتي للسلطات المعنية في بلدك بحالتك لمساعدتك
-        </Text>
+        نحن مجموعة صغيرة من المطورين نعمل على إيجاد حل مبسط يسمح للحكومة بشكل
+        أفضل مساعدة مواطنيها على مكافحة هذا الفيروس.
+      </Text>
+      <Text style={styles.text}>
+        نحاول أيضًا تقدير تأثير الوباء الحالي على السكان عامة والمساعدة في الكشف
+        عن المصابين دون الاتصال بالجمهور ، مما يساعد على وقف انتشار المرض.
+      </Text>
     </View>
   </InfoWithAction>
 );
@@ -23,9 +29,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    textAlign: 'center',
-    paddingTop: 20,
-    fontSize: 22,
+    textAlign: 'right',
+    paddingTop: 10,
+    fontSize: 14,
     lineHeight: 40,
   },
   logo: {
