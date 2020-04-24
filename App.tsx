@@ -13,7 +13,7 @@ import DataPrivacy from './src/screens/Intro/DataPrivacy';
 
 const Stack = createStackNavigator();
 
-const HomeScreenOptions = {
+const NoHeader = {
   header: () => <View />,
 };
 
@@ -37,10 +37,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="HowTo" component={HowTo} options={HomeScreenOptions} />
-        <Stack.Screen name="DataPrivacy" component={DataPrivacy} options={ScreenWithBackButtonOptions} />
-        <Stack.Screen name="AskForLocation" component={AskForLocation} options={ScreenWithBackButtonOptions}/>
-        <Stack.Screen name="Home" component={HomeScreen} options={HomeScreenOptions} />
+        <Stack.Screen name="HowTo" component={HowTo} options={NoHeader} />
+        <Stack.Screen name="DataPrivacy" component={DataPrivacy} options={NoHeader} />
+        <Stack.Screen name="AskForLocation" component={AskForLocation} options={NoHeader}/>
+        <Stack.Screen name="Home" component={HomeScreen} options={NoHeader} />
         <Stack.Screen name="Bot" component={BotScreen} options={ScreenWithBackButtonOptions} />
       </Stack.Navigator>
     </NavigationContainer>

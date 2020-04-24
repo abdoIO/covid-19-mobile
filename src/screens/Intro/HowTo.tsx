@@ -27,11 +27,12 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    justifyContent: 'flex-start',
   },
   text: {
-    textAlign: 'right',
-    paddingTop: 10,
-    fontSize: 22,
+    textAlign: 'center',
+    paddingTop: 20,
+    fontSize: 18,
     lineHeight: 40,
   },
   logo: {
