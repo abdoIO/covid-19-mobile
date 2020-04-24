@@ -42,7 +42,6 @@ const BotScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        {Platform.OS !== 'web' &&
           <ChatBot
             steps={steps}
             botAvatar={botAvatar}
@@ -51,7 +50,7 @@ const BotScreen = () => {
             botBubbleColor={colors.blue400}
             style={{ borderbottomColor: 'white' }}
             optionBubbleColor={colors.blue400}
-          />}
+          />
       </View>
     </SafeAreaView>
   );
