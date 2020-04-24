@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   text: {
     textAlign: 'right',
     paddingTop: 10,
-    fontSize: 14,
+    fontSize: 22,
     lineHeight: 40,
   },
   logo: {

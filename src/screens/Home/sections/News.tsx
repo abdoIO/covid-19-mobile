@@ -7,13 +7,13 @@ import Card from '../../../components/Card';
 import Swiper from '../../../components/Swiper';
 import { colors } from '../../../theme';
 
-const News = () => {
+const News = ({ country = 'مصر' }) => {
   const options = {
     data: [], // default for `data` will be an array instead of undefined
   };
 
   const { loading, error, data } = useFetch(
-    'https://newsapi.org/v2/everything?apiKey=68ddf899b505404e960daf512baabe76&q=كورونا مصر',
+    `https://newsapi.org/v2/everything?apiKey=68ddf899b505404e960daf512baabe76&q=${country} كورونا`,
     []
   );
 

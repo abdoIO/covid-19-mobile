@@ -1,10 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Platform } from 'react-native';
 import useFetch from 'use-http';
-
-import Card from '../../../components/Card';
-
 import { colors } from '../../../theme';
+import Card from '../../../components/Card';
 
 const DisplayCount = ({ title, number, color }) => (
   <View style={styles.displayContainer}>

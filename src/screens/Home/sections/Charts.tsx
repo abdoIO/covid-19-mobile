@@ -6,9 +6,9 @@ import moment from 'moment';
 
 import Card from '../../../components/Card';
 
-const Charts = () => {
+const Charts = ({ country = 'egypt' }) => {
   const { loading, error, data } = useFetch(
-    'https://api.covid19api.com/live/country/egypt/status/confirmed',
+    `https://api.covid19api.com/live/country/${country}/status/confirmed`,
     []
   );
 
@@ -17,7 +17,7 @@ const Charts = () => {
   if (data) {
     days = data.map((entry) => {
       let dateFormatted = moment(entry.Date, 'YYYY-MM-DD HH:mm:ss');
-      return dateFormatted.format('dddd');
+      return dateFormatted.format('dd');
     });
 
     activeCases = data.map((entry) => {
