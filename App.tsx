@@ -37,11 +37,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Bot" component={BotScreen} options={ScreenWithBackButtonOptions} />
         <Stack.Screen name="HowTo" component={HowTo} options={NoHeader} />
         <Stack.Screen name="DataPrivacy" component={DataPrivacy} options={NoHeader} />
         <Stack.Screen name="AskForLocation" component={AskForLocation} options={NoHeader}/>
         <Stack.Screen name="Home" component={HomeScreen} options={NoHeader} />
-        <Stack.Screen name="Bot" component={BotScreen} options={ScreenWithBackButtonOptions} />
       </Stack.Navigator>
     </NavigationContainer>
   );

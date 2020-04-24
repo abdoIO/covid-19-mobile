@@ -1,7 +1,7 @@
 export default [
     {
       id: '1',
-      message: 'What is your name?',
+      message: 'ما اسمك؟',
       trigger: '2',
     },
     {
@@ -11,21 +11,30 @@ export default [
     },
     {
       id: '3',
-      message: '3amel eh ya {previousValue}',
+      message: 'كم عمرك؟',
       trigger: '4',
     },
     {
       id: '4',
-      options: [
-        { value: 1, label: 'ta3ban', trigger: '5' },
-        { value: 2, label: 'ta3ban nek', trigger: '5' },
-        { value: 3, label: 'ana saleem', trigger: '5' },
-      ],
+      inputAttributes: {keyboardType: 'numeric'},
+      user: true,
       trigger: '5',
     },
     {
       id: '5',
-      message: 'roo7 etnak',
-      end: true,
+      message: 'ما هو جنسك؟',
+      trigger: '6',
+    },
+    {
+      id: '6',
+      options: [
+        { value: 1, label: 'ذكر', trigger: '7' },
+        { value: 2, label: 'انثي', trigger: '7' },
+      ],
+      trigger: '7',
+    },
+    {
+      id: '7',
+      message: 'aa',
     },
   ];
