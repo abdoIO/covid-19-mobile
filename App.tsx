@@ -9,7 +9,7 @@ import HomeScreen from './src/screens/Home/HomeScreen';
 import HowTo from './src/screens/Intro/HowTo';
 import AskForLocation from './src/screens/Intro/AskForLocation';
 import DataPrivacy from './src/screens/Intro/DataPrivacy';
-import FormScreen from './src/screens/form/FormScreen';
+import FormScreen from './src/screens/Form/FormScreen';
 import { colors } from './src/theme';
 
 const Stack = createStackNavigator();
