@@ -10,6 +10,7 @@ import HowTo from './src/screens/Intro/HowTo';
 import AskForLocation from './src/screens/Intro/AskForLocation';
 import DataPrivacy from './src/screens/Intro/DataPrivacy';
 import FormScreen from './src/screens/Form/FormScreen';
+import BotFormScreen from './src/screens/BotForm/BotForm';
 import { colors } from './src/theme';
 
 const Stack = createStackNavigator();
@@ -38,6 +39,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="BotFormScreen"
+          component={BotFormScreen}
+          options={ScreenWithBackButtonOptions}
+        />
         <Stack.Screen
           name="Form"
           component={FormScreen}
