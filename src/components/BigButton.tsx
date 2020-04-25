@@ -6,6 +6,7 @@ import {
   Dimensions,
   ViewStyle,
 } from 'react-native';
+
 import { colors } from '../theme';
 
 const { width } = Dimensions.get('window');

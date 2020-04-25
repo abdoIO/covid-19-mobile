@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import { Picker } from '@react-native-community/picker';
 import useFetch from 'use-http';
+
+import FormSteps from '../../context/FormSteps';
+
+import { colors } from '../../theme';
 
 const Form = () => {
   const { get, post, response, loading, error } = useFetch(
@@ -23,48 +27,44 @@ const Form = () => {
   //   });
   // };
 
-  const steps = [
-    {
-      id: '1',
-      type: 'input',
-      question: 'ما اسمك؟',
-      next: '2',
-    },
-
-    {
-      id: '2',
-      type: 'picker',
-      question: 'كم عمرك؟',
-      next: '3',
-    },
-    {
-      id: '3',
-      type: 'choice',
-      question: 'ما هو جنسك؟',
-      next: '4',
-    },
-  ];
-
-  const renderQuestionComponent = (type) => {
+  const renderQuestionComponent = (type, choices) => {
     switch (type) {
       case 'input':
-        return <TextInput style={styles.input} />;
+        return (
+          <TextInput
+            style={styles.input}
+            underlineColorAndroid="transparent"
+            placeholder="اسمك"
+            placeholderTextColor="#9a73ef"
+            autoCapitalize="none"
+          />
+        );
         break;
 
       case 'choice':
         return (
           <>
-            <Button title="Yes" onPress={(x) => {}}></Button>
-            <Button title="No" onPress={(x) => {}}></Button>
+            {choices.map((choice) => {
+              return (
+                <View>
+                  <Button
+                    title={choice.label}
+                    onPress={(x) => {
+                      choice.value;
+                    }}
+                  />
+                </View>
+              );
+            })}
           </>
         );
         break;
 
       case 'picker':
         return (
-          <Picker selectedValue="java" style={styles.picker}>
-            <Picker.Item label="Java" value="java" />
-            <Picker.Item label="JavaScript" value="js" />
+          <Picker selectedValue="22" style={styles.picker}>
+            <Picker.Item label="22" value="java" />
+            <Picker.Item label="33" value="js" />
           </Picker>
         );
         break;
@@ -76,14 +76,15 @@ const Form = () => {
 
   return (
     <>
-      {steps &&
-        steps.map((step) => {
+      {FormSteps &&
+        FormSteps.map((step) => {
           return (
             <View>
               <Text style={styles.question}>{step.question}</Text>
               <Text style={styles.explanation}></Text>
-
-              {renderQuestionComponent(step.type)}
+              <View style={styles.container}>
+                {renderQuestionComponent(step.type, step.choices)}
+              </View>
             </View>
           );
         })}
@@ -96,10 +97,23 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   explanation: {},
-  input: {},
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  input: {
+    width: 200,
+    margin: 15,
+    height: 40,
+    borderColor: colors.blue400,
+    borderWidth: 1,
+  },
   picker: {
-    height: 50,
-    width: 100,
+    position: 'relative',
+    width: 200,
+    bottom: 50,
+    height: 150,
   },
 });
 
