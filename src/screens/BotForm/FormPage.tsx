@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text, TouchableOpacity, Button, TextInput } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  Button,
+  TextInput,
+} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 type InputType = 'picker' | 'radio' | 'checkbox' | 'text';
 
 type FormPageProps = {
-  question: string;
-  inputType?: InputType;
   callback: (answer: string) => void;
-}
+  explanation: string;
+  inputType?: InputType;
+  question: string;
+  questionType: string;
+  subQuestions: [];
+};
 
 // const BubbleText = (text) => (
 //   <TouchableOpacity
@@ -17,48 +27,74 @@ type FormPageProps = {
 //   </TouchableOpacity>
 // )
 
-const renderInputComponent = (inputType, callback) => {
+const renderInputComponent = ({
+  callback,
+  explanation,
+  inputType,
+  question,
+  questionType,
+  subQuestions,
+}) => {
   const [value, setValue] = useState('');
-  return (
-    <>
-      <TextInput style={{ height: 40, borderColor: 'gray', borderWidth: 1 }} value={value} onChangeText={setValue} />
-      <Button title={'submit'} onPress={() => callback(value)} />
-    </>
-  );
-  // switch (inputType) {
-  //   case 'text':
 
-  //     break;
-  //   case 'radio':
+  switch (inputType) {
+    case 'text':
+      return (
+        <>
+          <TextInput
+            style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+            value={value}
+            onChangeText={setValue}
+          />
+          <Button
+            title={'submit'}
+            onPress={() => callback(value, questionType)}
+          />
+        </>
+      );
+      break;
 
-  //     break;
-  //   case 'picker':
+    case 'radio':
+      break;
+    case 'picker':
+      break;
+    case 'checkbox':
+      break;
 
-  //     break;
-  //   case 'checkbox':
-
-  //     break;
-
-  //   default:
-  //     break;
-  // }
-}
+    default:
+      break;
+  }
+};
 
 const FormPage = ({ route }) => {
-  const { question } = route.params;
-  const { inputType } = route.params;
-  const { callback } = route.params;
+  const {
+    callback = () => {},
+    explanation = '',
+    inputType = 'text',
+    question = '',
+    questionType = '',
+    subQuestions = [],
+  } = route.params;
+
   return (
     <View style={styles.container}>
       <View style={styles.questionContainer}>
         <Text style={styles.questionText}>{question}</Text>
+        <Text style={styles.questionText}>{explanation}</Text>
       </View>
       <View style={styles.answerContainer}>
-        {renderInputComponent(inputType, callback)}
+        {renderInputComponent({
+          callback,
+          explanation,
+          inputType,
+          question,
+          questionType,
+          subQuestions,
+        })}
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

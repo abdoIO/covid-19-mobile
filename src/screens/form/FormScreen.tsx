@@ -3,8 +3,6 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import { Picker } from '@react-native-community/picker';
 import useFetch from 'use-http';
 
-import FormSteps from '../../context/FormSteps';
-
 import { colors } from '../../theme';
 
 const Form = () => {

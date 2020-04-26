@@ -9,7 +9,6 @@ import HomeScreen from './src/screens/Home/HomeScreen';
 import HowTo from './src/screens/Intro/HowTo';
 import AskForLocation from './src/screens/Intro/AskForLocation';
 import DataPrivacy from './src/screens/Intro/DataPrivacy';
-import FormScreen from './src/screens/Form/FormScreen';
 import BotFormScreen from './src/screens/BotForm/BotForm';
 import { colors } from './src/theme';
 
@@ -42,11 +41,6 @@ export default function App() {
         <Stack.Screen
           name="BotFormScreen"
           component={BotFormScreen}
-          options={ScreenWithBackButtonOptions}
-        />
-        <Stack.Screen
-          name="Form"
-          component={FormScreen}
           options={ScreenWithBackButtonOptions}
         />
         <Stack.Screen name="HowTo" component={HowTo} options={NoHeader} />
