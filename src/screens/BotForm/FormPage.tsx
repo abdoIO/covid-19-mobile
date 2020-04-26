@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Button, TextInput } from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
 type InputType = 'picker' | 'radio' | 'checkbox' | 'text';
 
 type FormPageProps = {
