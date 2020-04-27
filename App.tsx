@@ -61,13 +61,13 @@ export default function App() {
         <Stack.Screen name="ChatBot" component={ChatBot} options={NoHeader} />
         <Stack.Screen name="Result" component={Result} options={NoHeader} />
 
-        {DummyBotFormScreens.map((screen) => (
+        {/* {DummyBotFormScreens.map((screen) => (
           <Stack.Screen
             name={screen.routeName}
             component={screen.routeComponent}
             options={NoHeader}
           />
-        ))}
+        ))} */}
         {/* <Stack.Screen name="FinishScreen" component={FourthQuestion} options={NoHeader} /> */}
       </Stack.Navigator>
     </NavigationContainer>
