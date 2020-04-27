@@ -19,7 +19,7 @@ const News = ({ country = 'مصر' }) => {
 
   const renderNewsCard = (article) => (
     <>
-      <Image source={{ uri: article.urlToImage }} style={styles.cardImage} />
+      {article.urlToImage && <Image source={{ uri: article.urlToImage }} style={styles.cardImage} />}
       <Text style={styles.cardText}>{article.title}</Text>
       <Text style={styles.cardDate}>
         {moment(article.publishedAt).format('DD-MM-YYYY')}
