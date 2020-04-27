@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, TextInput } from 'react-native';
-import BigButton from '../../components/BigButton';
-import { colors } from '../../theme';
 import { useNavigation } from '@react-navigation/native';
 
+import BigButton from '../../components/BigButton';
+
+import { colors } from '../../theme';
 
 const DummyBotPage = ({ question }) => {
   const { questionText, inputType, options, nextRoute } = question;
@@ -48,14 +49,9 @@ const DummyBotPage = ({ question }) => {
       <View style={styles.questionContainer}>
         <Text style={styles.questionText}>{questionText}</Text>
       </View>
-      <View style={styles.answerContainer}>
-        {renderInputComponent()}
-      </View>
+      <View style={styles.answerContainer}>{renderInputComponent()}</View>
       <View style={styles.submitButtonContainer}>
-        <BigButton
-          title={"Next"}
-          onPress={onSubmit}
-        />
+        <BigButton title={'Next'} onPress={onSubmit} />
       </View>
     </View>
   );
@@ -65,19 +61,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+    paddingVertical: 300,
   },
   questionContainer: {
-    flex: 2,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
+    marginVertical: 30,
   },
   questionText: {
-    fontSize: 20,
-    textAlign: 'center',
-    marginHorizontal: 20,
+    fontSize: 25,
+    marginHorizontal: 30,
   },
   answerContainer: {
-    flex: 2,
+    flex: 5,
   },
   submitButtonContainer: {
     flex: 1,
@@ -86,13 +82,12 @@ const styles = StyleSheet.create({
   },
   // render components
   textinput: {
-    height: 40,
-    borderColor: colors.blue400,
-    borderWidth: 1,
+    height: 60,
+    backgroundColor: '#DCDCDC',
     marginHorizontal: 30,
     paddingHorizontal: 10,
     borderRadius: 5,
-  }
+  },
 });
 
 export default DummyBotPage;

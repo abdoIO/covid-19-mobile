@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   questionText: {
-    fontSize: 20,
+    fontSize: 40,
     textAlign: 'center',
     marginHorizontal: 20,
   },

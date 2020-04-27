@@ -6,28 +6,28 @@ import BackButton from '../../components/BackButton';
 
 const AskForLocation = ({ navigation }) => (
   <>
-  <InfoWithAction
-    buttonLabel="فعل خدمات تحديد الموقع"
-    buttonOnPress={() =>
-      navigation.dispatch(
-        CommonActions.reset({
-          index: 1,
-          routes: [{ name: 'Home' }],
-        })
-      )
-    }>
-    <View style={styles.container}>
-      <Image
-        style={styles.logo}
-        source={require('../../assets/c19sm.png')}></Image>
-      <Text style={styles.text}>
-        نحن بحاجة إلى موقعك لتخصيص تجربة التطبيق. نحن لا نستخدم موقعك إلا إذا
-        أبلغت عن نفسك.
-      </Text>
-    </View>
-  </InfoWithAction>
-      <BackButton style={styles.backButton} />
-      </>
+    <InfoWithAction
+      buttonLabel="فعل خدمات تحديد الموقع"
+      buttonOnPress={() =>
+        navigation.dispatch(
+          CommonActions.reset({
+            index: 1,
+            routes: [{ name: 'Home' }],
+          })
+        )
+      }>
+      <View style={styles.container}>
+        <Image
+          style={styles.logo}
+          source={require('../../assets/logo.png')}></Image>
+        <Text style={styles.text}>
+          نحن بحاجة إلى موقعك لتخصيص تجربة التطبيق. نحن لا نستخدم موقعك إلا إذا
+          أبلغت عن نفسك.
+        </Text>
+      </View>
+    </InfoWithAction>
+    <BackButton style={styles.backButton} />
+  </>
 );
 
 const styles = StyleSheet.create({
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     lineHeight: 40,
   },
   logo: {
-    width: 70,
+    width: 350,
     height: 70,
     alignSelf: 'center',
   },

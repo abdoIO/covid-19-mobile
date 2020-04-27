@@ -9,7 +9,7 @@ import SafetyScoreSection from './sections/SafetyScore';
 import Totals from './sections/Totals';
 
 const HomeScreen = ({ navigation }) => {
-  const navigateToBotScreen = () => navigation.navigate('Bot');
+  const navigateToBotScreen = () => navigation.navigate('ChatBot');
 
   return (
     <SafeAreaView style={styles.safeArea}>

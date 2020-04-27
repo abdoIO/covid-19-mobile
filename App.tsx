@@ -10,7 +10,14 @@ import HomeScreen from './src/screens/Home/HomeScreen';
 import HowTo from './src/screens/Intro/HowTo';
 import AskForLocation from './src/screens/Intro/AskForLocation';
 import DataPrivacy from './src/screens/Intro/DataPrivacy';
-import { FirstQuestion, SecondQuestion, ThirdQuestion, FourthQuestion } from './src/screens/DummyBotForm';
+import {
+  FirstQuestion,
+  SecondQuestion,
+  ThirdQuestion,
+  FourthQuestion,
+} from './src/screens/DummyBotForm';
+import ChatBot from './src/screens/ChatBot/ChatBot';
+import Result from './src/screens/ChatBot/Result';
 
 const Stack = createStackNavigator();
 
@@ -38,12 +45,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="FirstQuestion" component={FirstQuestion} options={NoHeader} />
-        <Stack.Screen
-          name="HowTo"
-          component={HowTo}
+        {/* <Stack.Screen
+          name="ChatBot"
+          component={FirstQuestion}
           options={NoHeader}
-        />
+        /> */}
+        <Stack.Screen name="HowTo" component={HowTo} options={NoHeader} />
         <Stack.Screen
           name="DataPrivacy"
           component={DataPrivacy}
@@ -54,15 +61,24 @@ export default function App() {
           component={AskForLocation}
           options={NoHeader}
         />
+        <Stack.Screen name="Home" component={HomeScreen} options={NoHeader} />
+        <Stack.Screen name="ChatBot" component={ChatBot} options={NoHeader} />
+        <Stack.Screen name="Result" component={Result} options={NoHeader} />
         <Stack.Screen
-          name="Home"
-          component={HomeScreen}
+          name="SecondQuestion"
+          component={SecondQuestion}
           options={NoHeader}
         />
-
-        <Stack.Screen name="SecondQuestion" component={SecondQuestion} options={NoHeader} />
-        <Stack.Screen name="ThirdQuestion" component={ThirdQuestion} options={NoHeader} />
-        <Stack.Screen name="FourthQuestion" component={FourthQuestion} options={NoHeader} />
+        <Stack.Screen
+          name="ThirdQuestion"
+          component={ThirdQuestion}
+          options={NoHeader}
+        />
+        <Stack.Screen
+          name="FourthQuestion"
+          component={FourthQuestion}
+          options={NoHeader}
+        />
 
         {/* <Stack.Screen name="FinishScreen" component={FourthQuestion} options={NoHeader} /> */}
       </Stack.Navigator>

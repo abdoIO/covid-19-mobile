@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+
 import InfoWithAction from '../../components/InfoWithAction';
 
 const HowTo = ({ navigation }) => (
@@ -9,7 +10,7 @@ const HowTo = ({ navigation }) => (
     <View style={styles.container}>
       <Image
         style={styles.logo}
-        source={require('../../assets/c19sm.png')}></Image>
+        source={require('../../assets/logo.png')}></Image>
       <Text style={styles.text}>
         نحن مجموعة صغيرة من المطورين نعمل على إيجاد حل مبسط يسمح للحكومة بشكل
         أفضل مساعدة مواطنيها على مكافحة هذا الفيروس.
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
     lineHeight: 40,
   },
   logo: {
-    width: 70,
+    width: 350,
     height: 70,
     alignSelf: 'center',
   },

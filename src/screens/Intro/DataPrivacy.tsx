@@ -11,15 +11,15 @@ const DataPrivacy = ({ navigation }) => (
       <View style={styles.container}>
         <Image
           style={styles.logo}
-          source={require('../../assets/c19sm.png')}></Image>
+          source={require('../../assets/logo.png')}></Image>
         <Text style={styles.text}>
           هذا التطبيق يساعدك على عملية التشخيص الذاتي لفيروس كورونا. يمكنك هذا
           التطبيق ايضا بالابلاغ الذاتي للسلطات المعنية في بلدك بحالتك لمساعدتك
-      </Text>
+        </Text>
         <Text style={styles.text}>
-          نحن ملزمون بحفظ بياناتك الخاصة. نحن نستخدم البيانات فقط بغرض مساعدتك في
-          إعداد التقارير الذاتية والتشخيص الذاتي.
-      </Text>
+          نحن ملزمون بحفظ بياناتك الخاصة. نحن نستخدم البيانات فقط بغرض مساعدتك
+          في إعداد التقارير الذاتية والتشخيص الذاتي.
+        </Text>
       </View>
     </InfoWithAction>
     <BackButton style={styles.backButton} />
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     lineHeight: 40,
   },
   logo: {
-    width: 70,
+    width: 350,
     height: 70,
     alignSelf: 'center',
   },
