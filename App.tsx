@@ -4,13 +4,13 @@ import { View, TouchableOpacity } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Feather } from '@expo/vector-icons';
+import { colors } from './src/theme';
 
 import HomeScreen from './src/screens/Home/HomeScreen';
 import HowTo from './src/screens/Intro/HowTo';
 import AskForLocation from './src/screens/Intro/AskForLocation';
 import DataPrivacy from './src/screens/Intro/DataPrivacy';
-import BotFormScreen from './src/screens/BotForm/BotForm';
-import { colors } from './src/theme';
+import { FirstQuestion, SecondQuestion, ThirdQuestion, FourthQuestion } from './src/screens/DummyBotForm';
 
 const Stack = createStackNavigator();
 
@@ -38,12 +38,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="FirstQuestion" component={FirstQuestion} options={NoHeader} />
         <Stack.Screen
-          name="BotFormScreen"
-          component={BotFormScreen}
-          options={ScreenWithBackButtonOptions}
+          name="HowTo"
+          component={HowTo}
+          options={NoHeader}
         />
-        <Stack.Screen name="HowTo" component={HowTo} options={NoHeader} />
         <Stack.Screen
           name="DataPrivacy"
           component={DataPrivacy}
@@ -54,7 +54,17 @@ export default function App() {
           component={AskForLocation}
           options={NoHeader}
         />
-        <Stack.Screen name="Home" component={HomeScreen} options={NoHeader} />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={NoHeader}
+        />
+
+        <Stack.Screen name="SecondQuestion" component={SecondQuestion} options={NoHeader} />
+        <Stack.Screen name="ThirdQuestion" component={ThirdQuestion} options={NoHeader} />
+        <Stack.Screen name="FourthQuestion" component={FourthQuestion} options={NoHeader} />
+
+        {/* <Stack.Screen name="FinishScreen" component={FourthQuestion} options={NoHeader} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
