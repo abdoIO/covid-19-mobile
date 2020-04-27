@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, TextInput } from 'react-native';
+import { Picker } from '@react-native-community/picker';
 import BigButton from '../../components/BigButton';
+import SelectList from '../../components/SelectList';
 import { colors } from '../../theme';
 import { useNavigation } from '@react-navigation/native';
 
@@ -9,27 +11,36 @@ const DummyBotPage = ({ question }) => {
   const { questionText, inputType, options, nextRoute } = question;
 
   const renderInputComponent = () => {
-    const [value, setValue] = useState('');
+    const [textInputValue, setTextInputValue] = useState('');
+    const [pickerValue, setPickerValue] = useState(null);
+    const [selectListValue, setSelectListValue] = useState([]);
 
     switch (inputType) {
       case 'text':
         return (
           <TextInput
             style={styles.textinput}
-            value={value}
-            onChangeText={setValue}
+            value={textInputValue}
+            onChangeText={setTextInputValue}
             autoFocus
             returnKeyType="done"
             onSubmitEditing={onSubmit}
           />
         );
 
-      case 'radio':
-        break;
       case 'picker':
-        break;
-      case 'checkbox':
-        break;
+        return (
+          <Picker
+            selectedValue={pickerValue}
+            style={styles.picker}
+            onValueChange={itemValue => setPickerValue(itemValue)}
+          >
+            {options.map(option => <Picker.Item label={option.label} value={option.id} />)}
+          </Picker>
+        )
+
+      case 'select-list':
+        return <SelectList options={options} onSelect={(values) => setSelectListValue(values)} />
 
       default:
         break;
@@ -92,7 +103,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
     paddingHorizontal: 10,
     borderRadius: 5,
-  }
+  },
+  picker: {
+    height: 50,
+    width: '100%',
+  },
 });
 
 export default DummyBotPage;
